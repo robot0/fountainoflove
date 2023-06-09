@@ -1,12 +1,8 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { Dialog, Popover } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ");
-}
 
 export default function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,23 +28,23 @@ export default function Header() {
 					</button>
 				</div>
 				<Popover.Group className="hidden lg:flex lg:gap-x-12">
+					<Link href="/projects" className="text-sm font-semibold leading-6 text-gray-900">
+						Projects
+					</Link>
+					{/* <Link href="/events" className="text-sm font-semibold leading-6 text-gray-900">
+						Events
+					</Link> */}
 					<Link href="/about" className="text-sm font-semibold leading-6 text-gray-900">
 						About Us
-					</Link>
-					<Link href="/blog" className="text-sm font-semibold leading-6 text-gray-900">
-						Blog
-					</Link>
-					<Link href="/ourteam" className="text-sm font-semibold leading-6 text-gray-900">
-						Our Team
 					</Link>
 					<Link href="/contact" className="text-sm font-semibold leading-6 text-gray-900">
 						Contact
 					</Link>
 				</Popover.Group>
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
-					<a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-						Volunteer <span aria-hidden="true">&rarr;</span>
-					</a>
+					<Link href="/donate" className="text-sm font-semibold leading-6 text-gray-900">
+						Donate <span aria-hidden="true">&rarr;</span>
+					</Link>
 				</div>
 			</nav>
 			<Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -77,31 +73,31 @@ export default function Header() {
 						<div className="-my-6 divide-y divide-gray-500/10">
 							<div className="space-y-2 py-6">
 								<Link
-									href="#"
+									href="/about"
 									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
 									About Us
 								</Link>
 								<Link
+									href="/projects"
+									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+									Projects
+								</Link>
+								{/* <Link
 									href="#"
 									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-									Blog
-								</Link>
+									Events
+								</Link> */}
 								<Link
-									href="#"
-									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-									Our Team
-								</Link>
-								<Link
-									href="#"
+									href="/contact"
 									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
 									Contact
 								</Link>
 							</div>
 							<div className="py-6">
 								<Link
-									href="#"
+									href="/donate"
 									className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-									Volunteer
+									Donate
 								</Link>
 							</div>
 						</div>

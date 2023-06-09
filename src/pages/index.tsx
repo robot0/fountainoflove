@@ -2,24 +2,18 @@ import Head from "next/head";
 import Header from "../components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Image from "next/image";
-import { ChevronRightIcon, StarIcon } from "@heroicons/react/20/solid";
-
-const stats = [
-	{ label: "Founded", value: "2021" },
-	{ label: "Employees", value: "5" },
-	{ label: "Beta Users", value: "521" },
-	{ label: "Raised", value: "$25M" },
-];
-const logos = [
-	{ name: "Transistor", url: "https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" },
-	{ name: "Mirage", url: "https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" },
-	{ name: "Tuple", url: "https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" },
-	{ name: "Laravel", url: "https://tailwindui.com/img/logos/laravel-logo-gray-400.svg" },
-	{ name: "StaticKit", url: "https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" },
-	{ name: "Workcation", url: "https://tailwindui.com/img/logos/workcation-logo-gray-400.svg" },
-];
+import ImageCarousel from "../components/Carousel/ImageCarousel";
+import Link from "next/link";
 
 export default function Home() {
+	const images = [
+		"/slider2.jpeg",
+		"/slider3.jpeg",
+		"/fundraising.jpg",
+		"/charity-better.jpg",
+		"/community-fair.jpg",
+	];
+
 	return (
 		<>
 			<Head>
@@ -31,183 +25,32 @@ export default function Home() {
 			<Header />
 			<>
 				<main>
-					{/* Hero section */}
-					{/* <div className="relative isolate overflow-hidden bg-white">
-						<svg
-							className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-							aria-hidden="true">
-							<defs>
-								<pattern
-									id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
-									width={200}
-									height={200}
-									x="50%"
-									y={-1}
-									patternUnits="userSpaceOnUse">
-									<path d="M.5 200V.5H200" fill="none" />
-								</pattern>
-							</defs>
-							<rect
-								width="100%"
-								height="100%"
-								strokeWidth={0}
-								fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
-							/>
-						</svg>
-
-						<div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40 lg:px-8">
-							<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-								{/* <img
-									className="h-11"
-									src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-									alt="Your Company"
-								/> */}
-					{/* <div className="mt-24 sm:mt-32 lg:mt-16">
-									<a href="#" className="inline-flex space-x-6">
-										<span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
-											Whats new
-										</span>
-										<span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
-											<span>Just shipped v1.0</span>
-											<ChevronRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-										</span>
-									</a>
-								</div>
-								<h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-									Deploy to the cloud with confidence
-								</h1>
-								<p className="mt-6 text-lg leading-8 text-gray-600">
-									Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-									commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
-								</p>
-								<div className="mt-10 flex items-center gap-x-6">
-									<a
-										href="#"
-										className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-										Get started
-									</a>
-									<a href="#" className="text-base font-semibold leading-7 text-gray-900">
-										Learn more <span aria-hidden="true">→</span>
-									</a>
-								</div>
-							</div>
-							<div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
-								<div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-									<div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-										<img
-											src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-											alt="App screenshot"
-											width={2432}
-											height={1442}
-											className="w-[76rem] rounded-md shadow-2xl ring-1 ring-gray-900/10"
-										/>
-									</div>
-								</div>
-							</div>
-							H
-						</div>
-					</div> */}
-
 					<div className="relative overflow-hidden bg-white">
 						<div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
 							<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-								<div className="sm:max-w-lg">
+								<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
 									<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-										Help us put a smile on the faces in our community
+										Making a Difference, One Heart at a Time
 									</h1>
-									{/* <p className="mt-4 text-xl text-gray-500">
-										This year, our new summer collection will shelter you from the harsh elements of
-										a world that does not care if you live or die.
-									</p> */}
-								</div>
-								<div>
-									<div className="mt-10">
-										{/* Decorative image grid */}
-										<div
-											aria-hidden="true"
-											className="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
-											<div className="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-												<div className="flex items-center space-x-6 lg:space-x-8">
-													<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-														<div className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-															<Image
-																src="/charity-better.jpg"
-																width={100}
-																height={100}
-																alt=""
-																className="h-full w-full object-cover object-center"
-															/>
-														</div>
-														<div className="h-64 w-44 overflow-hidden rounded-lg">
-															<Image
-																src="/charity-better.jpg"
-																width={100}
-																height={100}
-																alt=""
-																className="h-full w-full object-cover object-center"
-															/>
-														</div>
-													</div>
-													<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-														<div className="h-64 w-44 overflow-hidden rounded-lg">
-															<Image
-																src="/charity-better.jpg"
-																width={100}
-																height={100}
-																alt=""
-																className="h-full w-full object-cover object-center"
-															/>
-														</div>
-														<div className="h-64 w-44 overflow-hidden rounded-lg">
-															<Image
-																src="/charity-better.jpg"
-																width={100}
-																height={100}
-																alt=""
-																className="h-full w-full object-cover object-center"
-															/>
-														</div>
-														<div className="h-64 w-44 overflow-hidden rounded-lg">
-															<Image
-																src="/charity-better.jpg"
-																width={100}
-																height={100}
-																alt=""
-																className="h-full w-full object-cover object-center"
-															/>
-														</div>
-													</div>
-													<div className="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-														<div className="h-64 w-44 overflow-hidden rounded-lg">
-															<Image
-																src="/charity-better.jpg"
-																width={100}
-																height={100}
-																alt=""
-																className="h-full w-full object-cover object-center"
-															/>
-														</div>
-														<div className="h-64 w-44 overflow-hidden rounded-lg">
-															<Image
-																src="/charity-better.jpg"
-																width={100}
-																height={100}
-																alt=""
-																className="h-full w-full object-cover object-center"
-															/>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-										<a
-											href="#"
-											className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">
+									<p className="mt-6 text-lg leading-8 text-gray-600">
+										Welcome to Fountain of Love: Where Compassion Flows
+									</p>
+									<div className="mt-10 flex items-center gap-x-6">
+										<Link
+											href="/about"
+											className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 											Discover more
-										</a>
+										</Link>
+										<Link
+											href="/donate"
+											className="text-base font-semibold leading-7 text-gray-900">
+											Donate <span aria-hidden="true">→</span>
+										</Link>
 									</div>
 								</div>
+							</div>
+							<div className="pr-8 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+								<ImageCarousel images={images} interval={3000} />
 							</div>
 						</div>
 					</div>
@@ -261,35 +104,6 @@ export default function Home() {
 											height={500}
 											alt=""
 										/>
-										{/* <div className="absolute inset-0 bg-rose-200 mix-blend-multiply" />
-										<div className="absolute inset-0 bg-gradient-to-t from-rose-200 via-rose-200 opacity-40" /> */}
-										<div className="relative px-8">
-											{/* <div>
-												<img
-													className="h-12"
-													src="https://tailwindui.com/img/logos/workcation.svg?color=white"
-													alt="Workcation"
-												/>
-											</div> */}
-											<blockquote className="mt-8">
-												<div className="relative text-lg font-medium text-white md:flex-grow">
-													<svg
-														className="absolute top-0 left-0 h-8 w-8 -translate-x-3 -translate-y-2 transform text-rose-400"
-														fill="currentColor"
-														viewBox="0 0 32 32"
-														aria-hidden="true">
-														<path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-													</svg>
-													<p className="relative">Lend a helping hand</p>
-												</div>
-
-												<footer className="mt-4">
-													<p className="text-base font-semibold text-rose-600">
-														Volunteer at Fountain of Love
-													</p>
-												</footer>
-											</blockquote>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -298,7 +112,7 @@ export default function Home() {
 								{/* Content area */}
 								<div className="pt-12 sm:pt-16 lg:pt-20">
 									<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-										On a mission to empower teams
+										Transforming Lives and Nurturing Dreams
 									</h2>
 									<div className="mt-6 space-y-6 text-gray-500">
 										<p className="text-lg">
@@ -314,58 +128,6 @@ export default function Home() {
 											a. Morbi enim fermentum lacus in. Viverra.
 										</p>
 									</div>
-								</div>
-
-								{/* Stats section */}
-								<div className="mt-10">
-									<dl className="grid grid-cols-2 gap-x-4 gap-y-8">
-										{stats.map((stat) => (
-											<div key={stat.label} className="border-t-2 border-gray-100 pt-6">
-												<dt className="text-base font-medium text-gray-500">{stat.label}</dt>
-												<dd className="text-3xl font-bold tracking-tight text-gray-900">
-													{stat.value}
-												</dd>
-											</div>
-										))}
-									</dl>
-									<div className="mt-10">
-										<a href="#" className="text-base font-medium text-rose-500">
-											Learn more about how we are changing the world &rarr;
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					{/* Logo cloud section */}
-					<div className="mt-32">
-						<div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8">
-							<div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-24">
-								<div>
-									<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-										Backed by world-renowned investors
-									</h2>
-									<p className="mt-6 max-w-3xl text-lg leading-7 text-gray-500">
-										Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed
-										consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu
-										morbi. Cursus faucibus nunc nisl netus morbi vel porttitor vitae ut. Amet vitae
-										fames senectus vitae.
-									</p>
-									<div className="mt-6">
-										<a href="#" className="text-base font-medium text-rose-500">
-											Meet our investors and advisors &rarr;
-										</a>
-									</div>
-								</div>
-								<div className="mt-12 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-									{logos.map((logo) => (
-										<div
-											key={logo.name}
-											className="col-span-1 flex justify-center bg-gray-50 py-8 px-8">
-											<img className="max-h-12" src={logo.url} alt={logo.name} />
-										</div>
-									))}
 								</div>
 							</div>
 						</div>
@@ -403,7 +165,7 @@ export default function Home() {
 							</svg>
 						</div>
 						<div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8">
-							<div className="relative overflow-hidden rounded-2xl bg-rose-500 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
+							<div className="relative overflow-hidden rounded-2xl bg-blue-500 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
 								<div aria-hidden="true" className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
 									<svg
 										className="absolute inset-0 h-full w-full"
@@ -412,12 +174,12 @@ export default function Home() {
 										fill="none"
 										viewBox="0 0 1463 360">
 										<path
-											className="text-rose-400 text-opacity-40"
+											className="text-blue-400 text-opacity-40"
 											fill="currentColor"
 											d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
 										/>
 										<path
-											className="text-rose-600 text-opacity-40"
+											className="text-blue-600 text-opacity-40"
 											fill="currentColor"
 											d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
 										/>

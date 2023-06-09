@@ -3,7 +3,27 @@ import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
 	{
-		question: "What's the best thing about Switzerland?",
+		question: "Who does Fountain of Love serve?",
+		answer:
+			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+	},
+	{
+		question: "In which countries does Fountain of Love operate?",
+		answer:
+			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+	},
+	{
+		question: "How can I get involved with Fountain of Love?",
+		answer:
+			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+	},
+	{
+		question: "How does Fountain of Love use the donations it receives?",
+		answer:
+			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+	},
+	{
+		question: "Can I donate items such as food, clothing, or other goods?",
 		answer:
 			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
 	},
