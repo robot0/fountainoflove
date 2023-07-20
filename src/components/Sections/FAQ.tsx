@@ -5,27 +5,27 @@ const faqs = [
 	{
 		question: "Who does Fountain of Love serve?",
 		answer:
-			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+			"Fountain of Love serves individuals and communities who are most vulnerable and in need of essential resources. Our primary focus is on the homeless, widows, and orphans. We are dedicated to not only providing for their physical needs such as nourishment and clothing but also promoting their emotional and social growth.",
 	},
 	{
 		question: "In which countries does Fountain of Love operate?",
 		answer:
-			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+			"Fountain of Love operates in two primary regions: the United States and Nigeria. We aim to serve the vulnerable populations in these countries by providing them with essential resources and services. However, our vision is global, and we are constantly exploring opportunities to expand our reach and impact",
 	},
 	{
 		question: "How can I get involved with Fountain of Love?",
 		answer:
-			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+			"There are many ways you can get involved with Fountain of Love. You can volunteer your time and skills in our various programs and initiatives. You can also make a financial contribution to support our operations. We are always in need of items such as food, clothing, and other essential goods. Spreading the word about our work to your networks and communities can also make a huge impact.",
 	},
 	{
 		question: "How does Fountain of Love use the donations it receives?",
 		answer:
-			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+			"Fountain of Love uses the donations it receives to provide essential services and resources to those in need. This includes purchasing and distributing food, clothing, and other essential goods. Donations also support programs that aim to improve the emotional and social well-being of the individuals we serve. We operate with transparency and ensure that every donation is used effectively to make a meaningful difference in the lives of the people we serve.",
 	},
 	{
 		question: "Can I donate items such as food, clothing, or other goods?",
 		answer:
-			"I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+			"Yes, we gratefully accept donations of food, clothing, and other essential goods. These donations go directly towards supporting the homeless, widows, and orphans we serve. Please visit our Donate page on our website for specific information on what items we currently need and how to make a donation.",
 	},
 	// More questions...
 ];

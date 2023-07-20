@@ -1,69 +1,46 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+// import { calendar_v3, google } from "googleapis";
 
-type Data = {
-	months: {
-		name: string;
-		days: { date: string; isCurrentMonth?: boolean; isToday?: boolean }[];
-	}[];
-};
+// export default async function handler(
+// 	req: { method: string },
+// 	res: {
+// 		status: (arg0: number) => {
+// 			(): any;
+// 			new (): any;
+// 			end: { (): any; new (): any };
+// 			json: { (arg0: calendar_v3.Schema$Event[] | undefined): void; new (): any };
+// 		};
+// 	},
+// ) {
+// 	if (req.method !== "GET") {
+// 		return res.status(405).end();
+// 	}
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-	// Get current date
-	const currentDate = new Date();
+// 	// Load client secrets from a local file.
+// 	const { client_secret, client_id, redirect_uris } = JSON.parse(
+// 		process.env.GOOGLE_CREDENTIALS,
+// 	).web;
+// 	const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
 
-	// Get current year
-	const currentYear = currentDate.getFullYear();
+// 	// Check if we have previously stored a token.
+// 	if (!process.env.GOOGLE_AUTH_TOKEN) {
+// 		return res.status(401).json({ message: "No authentication token" });
+// 	}
 
-	// Define months
-	const months = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December",
-	];
+// 	oAuth2Client.setCredentials(JSON.parse(process.env.GOOGLE_AUTH_TOKEN));
 
-	const data = {
-		months: months.map((month, index) => {
-			// Add 1 to index because months are 0 indexed
-			let isCurrentMonth = currentDate.getMonth() === index;
+// 	const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
 
-			return {
-				name: month,
-				days: generateDaysForMonth(
-					`${currentYear}-${String(index + 1).padStart(2, "0")}`,
-					isCurrentMonth,
-					currentDate.toISOString().slice(0, 10),
-				),
-			};
-		}),
-	};
-
-	res.status(200).json(data);
-}
-
-function generateDaysForMonth(month: string, isCurrentMonth: boolean, today: string) {
-	const numberOfDays = new Date(
-		Number(month.split("-")[0]),
-		Number(month.split("-")[1]),
-		0,
-	).getDate();
-	let days = [];
-
-	for (let i = 1; i <= numberOfDays; i++) {
-		days.push({
-			date: `${month}-${String(i).padStart(2, "0")}`,
-			isCurrentMonth,
-			isToday: `${month}-${String(i).padStart(2, "0")}` === today,
-		});
-	}
-
-	return days;
-}
+// 	try {
+// 		const response = await calendar.events.list({
+// 			calendarId: "primary",
+// 			timeMin: new Date().toISOString(),
+// 			maxResults: 10,
+// 			singleEvents: true,
+// 			orderBy: "startTime",
+// 		});
+// 		const events = response.data.items;
+// 		res.status(200).json(events);
+// 	} catch (error) {
+// 		res.status(500).json({ error: "Error retrieving events" });
+// 	}
+// }

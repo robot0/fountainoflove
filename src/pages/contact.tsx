@@ -25,8 +25,8 @@ export default function Contact() {
 									<div>
 										<dt className="sr-only">Mailing address</dt>
 										<dd>
-											<p>742 Evergreen Terrace</p>
-											<p>Springfield, OR 12345</p>
+											<p>17063 Orchard Ave</p>
+											<p>Omaha, NE 68135</p>
 										</dd>
 									</div>
 									<div className="mt-6">
@@ -36,7 +36,7 @@ export default function Contact() {
 												className="h-6 w-6 flex-shrink-0 text-gray-400"
 												aria-hidden="true"
 											/>
-											<span className="ml-3">+1 (555) 123-4567</span>
+											<span className="ml-3">+1 (407) 308-6923</span>
 										</dd>
 									</div>
 									<div className="mt-3">

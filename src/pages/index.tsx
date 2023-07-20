@@ -1,14 +1,84 @@
 import Head from "next/head";
-import Header from "../components/Header/Header";
+import FullpageWrapper from "@/components/Sections/FullPage";
+import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Image from "next/image";
-import ImageCarousel from "../components/Carousel/ImageCarousel";
+import ImageCarousel from "@/components/Carousel/ImageCarousel";
 import Link from "next/link";
+
+const projects = [
+	{
+		id: 1,
+		title: "Community Event in Lagos, Nigeria",
+		href: "#",
+		date: "Mar 16, 2020",
+		datetime: "2020-03-16",
+		category: { name: "Article", href: "/projects" },
+		imageUrl: "/slider2.jpeg",
+		preview:
+			"In Lagos, the Fountain of Love's event radiated unity and giving, drawing over 300 locals for a community day filled with shared necessities and strengthened bonds.",
+	},
+	{
+		id: 2,
+		title: "Community Event in Omaha, Nebraska",
+		href: "#",
+		date: "Mar 10, 2020",
+		datetime: "2020-03-10",
+		category: { name: "Video", href: "/projects" },
+		imageUrl: "/event9.jpeg",
+		preview:
+			"In Omaha, Fountain of Love celebrated unity and generosity at Benson Park, with a hundred locals gathering for a day of sharing essential goods and fostering community spirit.",
+	},
+];
+
+const files = [
+	{
+		title: "Providing for the elderly",
+		size: "3.9 MB",
+		source: "/event5.jpeg",
+	},
+	{
+		title: "Donations",
+		size: "3.9 MB",
+		source: "/donations2.jpg",
+	},
+	{
+		title: "Fountain of Love Crew in Lagos",
+		size: "3.9 MB",
+		source: "/fol-crew.jpg",
+	},
+	{
+		title: "Providing for the elderly",
+		size: "3.9 MB",
+		source: "/event2.jpeg",
+	},
+	{
+		title: "Providing for the elderly",
+		size: "3.9 MB",
+		source: "/event4.jpeg",
+	},
+	{
+		title: "Providing for the elderly",
+		size: "3.9 MB",
+		source: "/event7.jpeg",
+	},
+	{
+		title: "Providing for the elderly",
+		size: "3.9 MB",
+		source: "/event9.jpeg",
+	},
+	{
+		title: "Providing for the elderly",
+		size: "3.9 MB",
+		source: "/event10.jpeg",
+	},
+	// More files...
+];
 
 export default function Home() {
 	const images = [
-		"/slider2.jpeg",
-		"/slider3.jpeg",
+		"/event1.jpeg",
+		"/event2.jpeg",
 		"/fundraising.jpg",
 		"/charity-better.jpg",
 		"/community-fair.jpg",
@@ -49,150 +119,147 @@ export default function Home() {
 									</div>
 								</div>
 							</div>
-							<div className="pr-8 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+							<div className="sm:hidden lg:block pr-8 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[45%] 2xl:w-[65%]">
 								<ImageCarousel images={images} interval={3000} />
 							</div>
 						</div>
 					</div>
 
-					{/* Testimonial/stats section */}
-					<div className="relative mt-20">
-						<div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
-							<div className="relative sm:py-16 lg:py-0">
-								<div
-									aria-hidden="true"
-									className="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">
-									<div className="absolute inset-y-0 right-1/2 w-full rounded-r-3xl bg-gray-50 lg:right-72" />
-									<svg
-										className="absolute top-8 left-1/2 -ml-3 lg:-right-8 lg:left-auto lg:top-12"
-										width={404}
-										height={392}
-										fill="none"
-										viewBox="0 0 404 392">
-										<defs>
-											<pattern
-												id="02f20b47-fd69-4224-a62a-4c9de5c763f7"
-												x={0}
-												y={0}
-												width={20}
-												height={20}
-												patternUnits="userSpaceOnUse">
-												<rect
-													x={0}
-													y={0}
-													width={4}
-													height={4}
-													className="text-gray-200"
-													fill="currentColor"
-												/>
-											</pattern>
-										</defs>
-										<rect
-											width={404}
-											height={392}
-											fill="url(#02f20b47-fd69-4224-a62a-4c9de5c763f7)"
-										/>
-									</svg>
+					<section>
+						{/* Blog section */}
+						<div className="relative  py-16 sm:py-24 lg:py-32">
+							<div className="relative">
+								<div className="mx-auto max-w-md text-center sm:max-w-3xl lg:max-w-[90rem]">
+									<h2 className="text-lg font-semibold text-cyan-600">Volunteer</h2>
+									<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+										Our recent projects
+									</p>
 								</div>
-								<div className="relative mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:px-0 lg:py-20">
-									{/* Testimonial card*/}
-									<div className="relative overflow-hidden rounded-2xl pt-64 pb-10 shadow-xl">
-										<Image
-											className="absolute inset-0 h-full w-full object-cover"
-											src="/volunteer.jpg"
-											width={500}
-											height={500}
-											alt=""
-										/>
-									</div>
+								<div className="mx-auto mt-12 grid max-w-md gap-16 px-6 sm:max-w-lg lg:max-w-7xl lg:grid-cols-2">
+									{projects.map((project) => (
+										<div
+											key={project.id}
+											className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+											<div className="flex-shrink-0">
+												<Image
+													className="h-96 w-full block object-cover"
+													src={project.imageUrl}
+													alt=""
+													width={500}
+													height={500}
+												/>
+											</div>
+											<div className="flex flex-1 flex-col justify-between bg-white p-6">
+												<div className="flex-1">
+													<a href={project.href} className="mt-2 block">
+														<p className="text-xl font-semibold text-gray-900">{project.title}</p>
+														<p className="mt-3 text-base text-gray-500">{project.preview}</p>
+													</a>
+												</div>
+												<div className="mt-6 flex items-center">
+													<div>
+														<div className="flex space-x-1 text-sm text-gray-500">
+															<time dateTime={project.datetime}>{project.date}</time>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									))}
 								</div>
 							</div>
+						</div>
+					</section>
 
-							<div className="relative mx-auto max-w-md px-6 sm:max-w-3xl lg:px-0">
-								{/* Content area */}
-								<div className="pt-12 sm:pt-16 lg:pt-20">
-									<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-										Transforming Lives and Nurturing Dreams
-									</h2>
-									<div className="mt-6 space-y-6 text-gray-500">
-										<p className="text-lg">
-											Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed
-											consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu
-											morbi. Cursus faucibus nunc nisl netus morbi vel porttitor vitae ut. Amet
-											vitae fames senectus vitae.
-										</p>
-										<p className="text-base leading-7">
-											Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel
-											ultricies. Vulputate aliquet velit faucibus semper. Pellentesque in venenatis
-											vestibulum consectetur nibh id. In id ut tempus egestas. Enim sit aliquam nec,
-											a. Morbi enim fermentum lacus in. Viverra.
-										</p>
+					<section>
+						<div className="relative">
+							<div className="mx-auto max-w-md text-center sm:max-w-3xl lg:max-w-6xl">
+								<h2 className="text-4xl font-semibold text-cyan-600 mb-16">Our Impact</h2>
+								<ul
+									role="list"
+									className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+									{files.map((file) => (
+										<li key={file.source} className="relative">
+											<div className="group aspect-w-10 h-64 block w-full overflow-hidden rounded-lg">
+												<Image
+													src={file.source}
+													alt=""
+													width={500}
+													height={500}
+													className="pointer-events-none object-cover"
+												/>
+												<button type="button" className="absolute inset-0 focus:outline-none">
+													<span className="sr-only">View details for {file.title}</span>
+												</button>
+											</div>
+
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						{/* Testimonial/stats section */}
+						<div className="relative pb-48 pt-16 sm:pb-40 sm:pt-24 -mt-12">
+							<div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8">
+								<div className="relative sm:py-16 lg:py-0">
+									<div className="relative mt-20 mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-none lg:px-0 lg:py-20">
+										{/* Testimonial card*/}
+										<div className="overflow-hidden rounded-2xl pt-72 pb-10 shadow-xl">
+											<Image
+												className="absolute inset-0 h-full w-full object-cover sm:"
+												src="/event3.jpeg"
+												width={500}
+												height={500}
+												alt=""
+											/>
+										</div>
+									</div>
+								</div>
+
+								<div className="relative mx-auto max-w-md px-6 sm:max-w-3xl lg:px-0">
+									{/* Content area */}
+									<div className="pt-12 sm:pt-16 lg:pt-20">
+										<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+											Get Involved
+										</h2>
+										<div className="mt-6 space-y-6 text-gray-500">
+											<p className="text-lg">
+												Join hands with Fountain of Love and be a part of this profound journey.
+											</p>
+											<p className="text-lg">
+												There are multiple ways to contribute. Whether through donations,
+												volunteering, or corporate partnerships, your support becomes the lifeblood
+												of our endeavors. By collaborating with us, you have the opportunity to
+												change lives and build bridges of hope that will endure for generations to
+												come. You can donate your time, resources, or skills.
+											</p>
+											<p className="text-lg">
+												Join us as a volunteer, as a corporate partner, or as a benefactor. Each
+												role is crucial in our mission to bring love and hope to those who need it
+												the most.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</section>
 
 					{/* CTA section */}
-					<div className="relative mt-24 sm:mt-32 sm:py-16">
-						<div aria-hidden="true" className="hidden sm:block">
-							<div className="absolute inset-y-0 left-0 w-1/2 rounded-r-3xl bg-gray-50" />
-							<svg
-								className="absolute top-8 left-1/2 -ml-3"
-								width={404}
-								height={392}
-								fill="none"
-								viewBox="0 0 404 392">
-								<defs>
-									<pattern
-										id="8228f071-bcee-4ec8-905a-2a059a2cc4fb"
-										x={0}
-										y={0}
-										width={20}
-										height={20}
-										patternUnits="userSpaceOnUse">
-										<rect
-											x={0}
-											y={0}
-											width={4}
-											height={4}
-											className="text-gray-200"
-											fill="currentColor"
-										/>
-									</pattern>
-								</defs>
-								<rect width={404} height={392} fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)" />
-							</svg>
-						</div>
+					<div className="relative -mt-12 sm:py-16">
 						<div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8">
 							<div className="relative overflow-hidden rounded-2xl bg-blue-500 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
-								<div aria-hidden="true" className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
-									<svg
-										className="absolute inset-0 h-full w-full"
-										preserveAspectRatio="xMidYMid slice"
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 1463 360">
-										<path
-											className="text-blue-400 text-opacity-40"
-											fill="currentColor"
-											d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
-										/>
-										<path
-											className="text-blue-600 text-opacity-40"
-											fill="currentColor"
-											d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
-										/>
-									</svg>
-								</div>
 								<div className="relative">
 									<div className="sm:text-center">
 										<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-											Get notified when we&rsquo;re launching.
+											Get notified when we&rsquo;re launching near you.
 										</h2>
 										<p className="mx-auto mt-6 max-w-2xl text-lg text-rose-100">
-											Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed
-											consectetur neque tristique pellentesque.
+											Stay connected with our mission and be the first to know about our upcoming
+											events and initiatives.
 										</p>
 									</div>
 									<form action="#" className="mt-12 sm:mx-auto sm:flex sm:max-w-lg">
