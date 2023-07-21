@@ -1,5 +1,4 @@
 import Head from "next/head";
-import FullpageWrapper from "@/components/Sections/FullPage";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Image from "next/image";
