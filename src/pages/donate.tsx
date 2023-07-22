@@ -16,7 +16,7 @@ export default function Donate() {
 								<p className="mt-1 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
 									Donate
 								</p>
-								<p className="mx-auto mt-5 max-w-xl text-xl text-gray-500">
+								<p className="mx-auto font-sans mt-5 max-w-xl text-xl text-gray-500">
 									Put a smile on our communities
 								</p>
 							</div>

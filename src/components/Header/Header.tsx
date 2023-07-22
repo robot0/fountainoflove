@@ -28,21 +28,20 @@ export default function Header() {
 					</button>
 				</div>
 				<Popover.Group className="hidden lg:flex lg:gap-x-12">
-					<Link href="/projects" className="text-sm font-semibold leading-6 text-gray-900">
-						Projects
-					</Link>
-					{/* <Link href="/events" className="text-sm font-semibold leading-6 text-gray-900">
+					<Link href="/events" className="text-sm font-sans font-semibold leading-6 text-gray-900">
 						Events
-					</Link> */}
-					<Link href="/about" className="text-sm font-semibold leading-6 text-gray-900">
+					</Link>
+					<Link href="/about" className="text-sm font-sans font-semibold leading-6 text-gray-900">
 						About Us
 					</Link>
-					<Link href="/contact" className="text-sm font-semibold leading-6 text-gray-900">
+					<Link href="/contact" className="text-sm font-sans font-semibold leading-6 text-gray-900">
 						Contact
 					</Link>
 				</Popover.Group>
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
-					<Link href="/donate" className="text-sm font-semibold leading-6 text-gray-900">
+					<Link
+						href="/donate"
+						className="rounded-m font-sans bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 						Donate <span aria-hidden="true">&rarr;</span>
 					</Link>
 				</div>
@@ -78,9 +77,9 @@ export default function Header() {
 									About Us
 								</Link>
 								<Link
-									href="/projects"
+									href="/events"
 									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-									Projects
+									Events
 								</Link>
 								{/* <Link
 									href="#"

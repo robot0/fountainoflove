@@ -26,7 +26,7 @@ const TextCarousel: React.FC = () => {
 
 	return (
 		<div className="overflow-hidden whitespace-nowrap">
-			<span className="inline-block pl-full text-6xl font-bold" ref={carouselContent}>
+			<span className="inline-block pl-full font-sans text-6xl font-bold" ref={carouselContent}>
 				{repeatedText}
 			</span>
 		</div>

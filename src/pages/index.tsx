@@ -101,18 +101,18 @@ export default function Home() {
 									<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
 										Making a Difference, One Heart at a Time
 									</h1>
-									<p className="mt-6 text-lg leading-8 text-gray-600">
+									<p className="mt-6 text-lg font-sans leading-8 text-gray-600">
 										Welcome to Fountain of Love: Where Compassion Flows
 									</p>
 									<div className="mt-10 flex items-center gap-x-6">
 										<Link
 											href="/about"
-											className="rounded-md bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+											className="rounded-md font-sans bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 											Discover more
 										</Link>
 										<Link
 											href="/donate"
-											className="text-base font-semibold leading-7 text-gray-900">
+											className="text-base font-sans font-semibold leading-7 text-gray-900">
 											Donate <span aria-hidden="true">→</span>
 										</Link>
 									</div>
@@ -129,8 +129,8 @@ export default function Home() {
 						<div className="relative  py-16 sm:py-24 lg:py-32">
 							<div className="relative">
 								<div className="mx-auto max-w-md text-center sm:max-w-3xl lg:max-w-[90rem]">
-									<h2 className="text-lg font-semibold text-cyan-600">Volunteer</h2>
-									<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+									<h2 className="text-lg font-sans font-semibold text-cyan-600">Volunteer</h2>
+									<p className="mt-2 text-3xl font-sans font-bold tracking-tight text-gray-900 sm:text-4xl">
 										Our recent projects
 									</p>
 								</div>
@@ -151,13 +151,17 @@ export default function Home() {
 											<div className="flex flex-1 flex-col justify-between bg-white p-6">
 												<div className="flex-1">
 													<a href={project.href} className="mt-2 block">
-														<p className="text-xl font-semibold text-gray-900">{project.title}</p>
-														<p className="mt-3 text-base text-gray-500">{project.preview}</p>
+														<p className="text-xl font-sans font-semibold text-gray-900">
+															{project.title}
+														</p>
+														<p className="mt-3 text-base font-sans text-gray-500">
+															{project.preview}
+														</p>
 													</a>
 												</div>
 												<div className="mt-6 flex items-center">
 													<div>
-														<div className="flex space-x-1 text-sm text-gray-500">
+														<div className="flex font-sans space-x-1 text-sm text-gray-500">
 															<time dateTime={project.datetime}>{project.date}</time>
 														</div>
 													</div>
@@ -173,7 +177,7 @@ export default function Home() {
 					<section>
 						<div className="relative">
 							<div className="mx-auto max-w-md text-center sm:max-w-3xl lg:max-w-6xl">
-								<h2 className="text-4xl font-semibold text-cyan-600 mb-16">Our Impact</h2>
+								<h2 className="text-4xl font-semibold text-cyan-600 mb-16 font-sans">Our Impact</h2>
 								<ul
 									role="list"
 									className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
@@ -191,7 +195,6 @@ export default function Home() {
 													<span className="sr-only">View details for {file.title}</span>
 												</button>
 											</div>
-
 										</li>
 									))}
 								</ul>
@@ -221,21 +224,21 @@ export default function Home() {
 								<div className="relative mx-auto max-w-md px-6 sm:max-w-3xl lg:px-0">
 									{/* Content area */}
 									<div className="pt-12 sm:pt-16 lg:pt-20">
-										<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+										<h2 className="text-3xl font-sans font-bold tracking-tight text-gray-900 sm:text-5xl">
 											Get Involved
 										</h2>
 										<div className="mt-6 space-y-6 text-gray-500">
-											<p className="text-lg">
+											<p className="text-lg font-sans">
 												Join hands with Fountain of Love and be a part of this profound journey.
 											</p>
-											<p className="text-lg">
+											<p className="text-lg font-sans">
 												There are multiple ways to contribute. Whether through donations,
 												volunteering, or corporate partnerships, your support becomes the lifeblood
 												of our endeavors. By collaborating with us, you have the opportunity to
 												change lives and build bridges of hope that will endure for generations to
 												come. You can donate your time, resources, or skills.
 											</p>
-											<p className="text-lg">
+											<p className="text-lg font-sans">
 												Join us as a volunteer, as a corporate partner, or as a benefactor. Each
 												role is crucial in our mission to bring love and hope to those who need it
 												the most.
@@ -253,10 +256,10 @@ export default function Home() {
 							<div className="relative overflow-hidden rounded-2xl bg-blue-500 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
 								<div className="relative">
 									<div className="sm:text-center">
-										<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+										<h2 className="text-3xl font-sans font-bold tracking-tight text-white sm:text-4xl">
 											Get notified when we&rsquo;re launching near you.
 										</h2>
-										<p className="mx-auto mt-6 max-w-2xl text-lg text-rose-100">
+										<p className="mx-auto font-sans mt-6 max-w-2xl text-lg text-rose-100">
 											Stay connected with our mission and be the first to know about our upcoming
 											events and initiatives.
 										</p>
@@ -269,14 +272,14 @@ export default function Home() {
 											<input
 												id="cta-email"
 												type="email"
-												className="block w-full rounded-md border border-transparent px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose-500"
+												className="block font-sans w-full rounded-md border border-transparent px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-transparent focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose-500"
 												placeholder="Enter your email"
 											/>
 										</div>
 										<div className="mt-4 sm:mt-0 sm:ml-3">
 											<button
 												type="submit"
-												className="block w-full rounded-md border border-transparent bg-gray-900 px-5 py-3 text-base font-medium text-white shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose-500 sm:px-10">
+												className="block w-full font-sans rounded-md border border-transparent bg-gray-900 px-5 py-3 text-base font-medium text-white shadow hover:bg-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-rose-500 sm:px-10">
 												Notify me
 											</button>
 										</div>
