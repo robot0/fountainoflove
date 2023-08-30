@@ -1,10 +1,19 @@
 import Header from "../components/Header/Header";
+import Head from "next/head";
 import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import Footer from "@/components/Footer/Footer";
 
 export default function Contact() {
 	return (
 		<>
+			<div>
+				<Head>
+					<title>Contact us</title>
+					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+					<meta name="description" content="Donation page" />
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
+			</div>
 			<Header />
 			<>
 				<div className="relative bg-white">
