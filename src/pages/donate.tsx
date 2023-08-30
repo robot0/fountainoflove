@@ -64,7 +64,7 @@ export default function Donate() {
 								</div>
 							</div>
 						</div>
-						<div className="sm:hidden lg:block pr-8 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[43n%] 2xl:w-[65%]">
+						<div className="sm:hidden lg:block pr-8 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[43%] 2xl:w-[65%]">
 							<ImageCarousel images={images} interval={3000} />
 						</div>
 					</div>
