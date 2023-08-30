@@ -14,8 +14,8 @@ interface SocialNavItem {
 const navigation = {
 	main: [
 		{ name: "Home", href: "#" },
-		{ name: "Projects", href: "#" },
-		{ name: "About", href: "#" },
+		{ name: "Events", href: "/events" },
+		{ name: "About", href: "/about" },
 		{ name: "Contact", href: "#" },
 	] as MainNavItem[],
 	social: [
@@ -82,7 +82,7 @@ export default function Footer() {
 						</Link>
 					))}
 				</div>
-				<p className="mt-10 text-center text-xs leading-5 text-gray-500">
+				<p className="mt-10 text-center text-xs leading-5 font-sans text-gray-500">
 					&copy; 2023 Fountain of Love, Inc. All rights reserved.
 				</p>
 			</div>

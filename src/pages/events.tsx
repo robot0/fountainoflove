@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Head from "next/head";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import UpcomingEvents from "@/components/Sections/UpcomingEvents";
@@ -44,6 +45,14 @@ const events: Event[] = [
 export default function Events() {
 	return (
 		<>
+			<div>
+				<Head>
+					<title>Events</title>
+					<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+					<meta name="description" content="Events page" />
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
+			</div>
 			<Header />
 			<div className="bg-white px-6 pt-16 pb-20 lg:px-8 lg:pt-24 lg:pb-28">
 				<div className="relative mx-auto max-w-lg  lg:max-w-7xl">

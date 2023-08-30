@@ -12,7 +12,7 @@ const projects = [
 		href: "#",
 		date: "Mar 16, 2020",
 		datetime: "2020-03-16",
-		category: { name: "Article", href: "/projects" },
+		category: { name: "Article", href: "/events" },
 		imageUrl: "/slider2.jpeg",
 		preview:
 			"In Lagos, the Fountain of Love's event radiated unity and giving, drawing over 300 locals for a community day filled with shared necessities and strengthened bonds.",
@@ -23,14 +23,14 @@ const projects = [
 		href: "#",
 		date: "Mar 10, 2020",
 		datetime: "2020-03-10",
-		category: { name: "Video", href: "/projects" },
+		category: { name: "Video", href: "/events" },
 		imageUrl: "/event9.jpeg",
 		preview:
 			"In Omaha, Fountain of Love celebrated unity and generosity at Benson Park, with a hundred locals gathering for a day of sharing essential goods and fostering community spirit.",
 	},
 ];
 
-const files = [
+const photos = [
 	{
 		title: "Providing for the elderly",
 		size: "3.9 MB",
@@ -71,18 +71,18 @@ const files = [
 		size: "3.9 MB",
 		source: "/event10.jpeg",
 	},
-	// More files...
+	// More photos...
+];
+
+const images = [
+	"/event1.jpeg",
+	"/event2.jpeg",
+	"/fundraising.jpg",
+	"/charity-better.jpg",
+	"/community-fair.jpg",
 ];
 
 export default function Home() {
-	const images = [
-		"/event1.jpeg",
-		"/event2.jpeg",
-		"/fundraising.jpg",
-		"/charity-better.jpg",
-		"/community-fair.jpg",
-	];
-
 	return (
 		<>
 			<Head>
@@ -94,39 +94,52 @@ export default function Home() {
 			<Header />
 			<>
 				<main>
-					<div className="relative overflow-hidden bg-white">
-						<div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
-							<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-								<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-									<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-										Making a Difference, One Heart at a Time
-									</h1>
-									<p className="mt-6 text-lg font-sans leading-8 text-gray-600">
-										Welcome to Fountain of Love: Where Compassion Flows
-									</p>
-									<div className="mt-10 flex items-center gap-x-6">
-										<Link
-											href="/about"
-											className="rounded-md font-sans bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-											Discover more
-										</Link>
-										<Link
-											href="/donate"
-											className="text-base font-sans font-semibold leading-7 text-gray-900">
-											Donate <span aria-hidden="true">→</span>
-										</Link>
+					<section>
+						<div className="relative overflow-hidden bg-white">
+							<div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
+								<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
+									<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+										<h1 className="text-4xl font-sans font-bold tracking-tight text-gray-900 sm:text-6xl">
+											Making a Difference, One Heart at a Time
+										</h1>
+										<p className="mt-6 text-lg font-sans leading-8 text-gray-600">
+											Welcome to Fountain of Love: Where Compassion Flows
+										</p>
+										<div className="mt-10 flex items-center gap-x-6">
+											<Link
+												href="/about"
+												className="rounded-md font-sans bg-cyan-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+												Discover more
+											</Link>
+											<Link
+												href="/donate"
+												className="text-base font-sans font-semibold leading-7 text-gray-900">
+												Donate <span aria-hidden="true">→</span>
+											</Link>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div className="sm:hidden lg:block pr-8 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[45%] 2xl:w-[65%]">
-								<ImageCarousel images={images} interval={3000} />
+								<div className="hidden mt-12 ml-32 sm:block lg:hidden pr-8">
+									{/* iPad View */}
+									<ImageCarousel images={images} interval={3000} />
+								</div>
+
+								<div className="hidden lg:block pr-8 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[43%] 2xl:w-[65%]">
+									{/* Desktop View */}
+									<ImageCarousel images={images} interval={3000} />
+								</div>
+
+								<div className="block mt-12 ml-8 px-4 w-[80%] sm:hidden">
+									{/* Mobile View */}
+									<ImageCarousel images={images} interval={3000} />
+								</div>
 							</div>
 						</div>
-					</div>
+					</section>
 
 					<section>
 						{/* Blog section */}
-						<div className="relative  py-16 sm:py-24 lg:py-32">
+						<div className="relative py-8 sm:py-24 lg:py-32">
 							<div className="relative">
 								<div className="mx-auto max-w-md text-center sm:max-w-3xl lg:max-w-[90rem]">
 									<h2 className="text-lg font-sans font-semibold text-cyan-600">Volunteer</h2>
@@ -177,22 +190,22 @@ export default function Home() {
 					<section>
 						<div className="relative">
 							<div className="mx-auto max-w-md text-center sm:max-w-3xl lg:max-w-6xl">
-								<h2 className="text-4xl font-semibold text-cyan-600 mb-16 font-sans">Our Impact</h2>
+								<h2 className="text-5xl mt-8 font-bold text-black mb-16 font-sans">Our Impact</h2>
 								<ul
 									role="list"
-									className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-									{files.map((file) => (
-										<li key={file.source} className="relative">
+									className="px-4 grid grid-cols-2 gap-x-2 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+									{photos.map((photo) => (
+										<li key={photo.source} className="relative">
 											<div className="group aspect-w-10 h-64 block w-full overflow-hidden rounded-lg">
 												<Image
-													src={file.source}
+													src={photo.source}
 													alt=""
 													width={500}
 													height={500}
 													className="pointer-events-none object-cover"
 												/>
 												<button type="button" className="absolute inset-0 focus:outline-none">
-													<span className="sr-only">View details for {file.title}</span>
+													<span className="sr-only">View details for {photo.title}</span>
 												</button>
 											</div>
 										</li>
@@ -224,8 +237,8 @@ export default function Home() {
 								<div className="relative mx-auto max-w-md px-6 sm:max-w-3xl lg:px-0">
 									{/* Content area */}
 									<div className="pt-12 sm:pt-16 lg:pt-20">
-										<h2 className="text-3xl font-sans font-bold tracking-tight text-gray-900 sm:text-5xl">
-											Get Involved
+										<h2 className="text-2xl font-sans font-bold tracking-tight text-black sm:text-5xl">
+											Get Involved With Us
 										</h2>
 										<div className="mt-6 space-y-6 text-gray-500">
 											<p className="text-lg font-sans">
@@ -253,7 +266,7 @@ export default function Home() {
 					{/* CTA section */}
 					<div className="relative -mt-12 sm:py-16">
 						<div className="mx-auto max-w-md px-6 sm:max-w-3xl lg:max-w-7xl lg:px-8">
-							<div className="relative overflow-hidden rounded-2xl bg-blue-500 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
+							<div className="relative overflow-hidden rounded-2xl bg-cyan-600 px-6 py-10 shadow-xl sm:px-12 sm:py-20">
 								<div className="relative">
 									<div className="sm:text-center">
 										<h2 className="text-3xl font-sans font-bold tracking-tight text-white sm:text-4xl">

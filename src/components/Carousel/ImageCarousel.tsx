@@ -18,11 +18,12 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ images, interval }) => {
 	}, [images, interval]);
 
 	return (
-		<div>
+		<div className="relative w-full h-[250px] sm:h-[450px] lg:h-[600px]">
 			<Image
 				src={images[currentImageIndex]}
 				alt="carousel"
-				fill
+				width={500}
+				height={500}
 				style={{ maxWidth: "100%", objectFit: "contain" }}
 			/>
 		</div>

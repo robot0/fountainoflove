@@ -68,7 +68,7 @@ export default function Contact() {
 											name="full-name"
 											id="full-name"
 											autoComplete="name"
-											className="block font-sans w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+											className="block font-sans w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
 											placeholder="Full name"
 										/>
 									</div>
@@ -81,7 +81,7 @@ export default function Contact() {
 											name="email"
 											type="email"
 											autoComplete="email"
-											className="block w-full font-sans rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+											className="block w-full font-sans rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
 											placeholder="Email"
 										/>
 									</div>
@@ -94,7 +94,7 @@ export default function Contact() {
 											name="phone"
 											id="phone"
 											autoComplete="tel"
-											className="block w-full font-sans rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+											className="block w-full font-sans rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
 											placeholder="Phone"
 										/>
 									</div>
@@ -106,7 +106,7 @@ export default function Contact() {
 											id="message"
 											name="message"
 											rows={4}
-											className="block w-full font-sans rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+											className="block w-full font-sans rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-cyan-500 focus:ring-cyan-500"
 											placeholder="Message"
 											defaultValue={""}
 										/>
@@ -114,7 +114,7 @@ export default function Contact() {
 									<div>
 										<button
 											type="submit"
-											className="inline-flex font-sans justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+											className="inline-flex font-sans justify-center rounded-md border border-transparent bg-cyan-600 py-3 px-6 text-base font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2">
 											Submit
 										</button>
 									</div>

@@ -41,7 +41,7 @@ export default function Header() {
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
 					<Link
 						href="/donate"
-						className="rounded-m font-sans bg-indigo-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+						className="rounded-m font-sans bg-cyan-600 px-3.5 py-1.5 text-sm font-semibold leading-7 text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600">
 						Donate <span aria-hidden="true">&rarr;</span>
 					</Link>
 				</div>
@@ -50,16 +50,10 @@ export default function Header() {
 				<div className="fixed inset-0 z-10" />
 				<Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 					<div className="flex items-center justify-between">
-						<a href="#" className="-m-1.5 p-1.5">
-							<span className="sr-only">Your Company</span>
-							<Image
-								className="h-8 w-auto"
-								src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-								width={100}
-								height={100}
-								alt=""
-							/>
-						</a>
+						<Link href="/" className="-m-1.5 p-1.5">
+							<span className="sr-only">Fountain Of Love</span>
+							<Image className="h-24 w-auto" src="/fol_logo.png" width={500} height={500} alt="" />
+						</Link>
 						<button
 							type="button"
 							className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -73,29 +67,24 @@ export default function Header() {
 							<div className="space-y-2 py-6">
 								<Link
 									href="/about"
-									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+									className="-mx-3 text-center block font-sans rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
 									About Us
 								</Link>
 								<Link
 									href="/events"
-									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+									className="-mx-3 block text-center font-sans rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
 									Events
 								</Link>
-								{/* <Link
-									href="#"
-									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-									Events
-								</Link> */}
 								<Link
 									href="/contact"
-									className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+									className="-mx-3 block text-center font-sans rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
 									Contact
 								</Link>
 							</div>
 							<div className="py-6">
 								<Link
 									href="/donate"
-									className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+									className="-mx-3 block font-sans text-center rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
 									Donate
 								</Link>
 							</div>
